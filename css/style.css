@@ -1,0 +1,461 @@
+:root{
+    --primary: #3D0C11;
+    --bg: #F9DEC9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: black;
+}
+
+.navbar_citra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: #D80032;
+    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar_citra .navbar-logo_citra {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    font-style: italic;
+}
+
+.navbar_citra .navbar-logo_citra span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bg);
+}
+
+.navbar_citra .navbar-nav_citra a {
+    color: white;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 1rem;
+} 
+
+.navbar_citra .navbar-nav_citra a:hover{
+    color: #3D0C11;
+}
+
+.navbar_citra .navbar-nav_citra a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar_citra .navbar-nav_citra a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar_citra .navbar-extra_citra a{
+    color: white;
+    margin: 0 0.5rem;
+}
+
+.navbar_citra .navbar-extra_citra a:hover{
+    color: var(--primary);
+}
+
+.navbar_citra .navbar-nav_citra ul{
+    list-style: none;
+}
+
+.navbar_citra .navbar-nav_citra ul li{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+.navbar_citra .navbar-nav_citra ul li a{
+    display: block;
+    padding: 20px 25px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar_citra .navbar-nav_citra ul li ul.dropdown li {
+    display: block;
+}
+
+.navbar_citra .navbar-nav_citra ul li ul.dropdown {
+    width: 200%;
+    background: #D80032;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+.navbar_citra .navbar-nav_citra ul li:hover ul.dropdown {
+    display: block;
+}
+
+#hamburger-menu_citra {
+    display: none;
+}
+
+/* search form */
+.navbar_citra .search-form {
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    background-color: white;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+    border: 1px solid var(--primary);
+}
+
+.navbar_citra .search-form.active {
+    transform: scaleY(1);
+}
+
+.navbar_citra .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.3rem;
+    color: var(--primary);
+    padding: 1rem;
+    background-color: white;
+}
+
+.navbar_citra .search-form label{
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: var(--primary);
+}
+
+/* shopping cart */
+.shopping-cart{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 35rem;
+    padding: 0 1.5rem;
+    color: var(--primary);
+    background-color: white;
+    transition: 0.3s linear;
+}
+
+.shopping-cart.active{
+    right: 0;
+}
+
+.shopping-cart .cart-item{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--primary);
+    position: relative;
+}
+
+.shopping-cart img{
+    height: 8rem;
+}
+
+.shopping-cart h3{
+    font-size: 1rem;
+    padding-bottom: 0.5 rem;
+    width: 80%;
+}
+
+.shopping-cart .item-price{
+    font-size: 1.2rem;
+    width: 80%;
+
+}
+
+.shopping-cart .remove-item{
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover{
+    color: #D80032;
+}
+
+/* Hero section */
+.hero_citra {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../gambar/cart-bags.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero_citra::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(249, 221, 200, 1)5%, rgb(255, 255, 255, 0)90%);
+}
+
+.hero_citra .content{
+    padding: 1.4rem 7%;
+    max-width: 70rem;
+}
+
+.hero_citra .content h1{
+    font-size: 3rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 1);
+    line-height: 1.2;
+}
+
+.hero_citra .content h1 span{
+    color: var(--bg);
+}
+
+.hero_citra .content p{
+    font-size: 1.6rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 200;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 1);
+}
+
+.hero_citra .content .cta{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero_citra .content .cta:hover{
+    background-color: #D80032;
+}
+
+.about_citra {
+    padding: 10rem 7% 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.about_citra .row_citra{
+    display: flex;
+}
+
+.about_citra .row_citra .about-img{
+    flex: 1 1 45rem;
+}
+
+.about_citra .row_citra .about-img img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.about_citra .row_citra .content_citra{
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+    margin: 1.5rem;
+}
+
+.about_citra .row_citra .content_citra h3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #FF9209;
+}
+
+.about_citra .row_citra .content_citra h3 span{
+    color: var(--primary);
+}
+
+.about_citra .row_citra .content_citra p{
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+    line-height: 1.6rem;
+}
+
+.peta_citra {
+    padding: 8rem 7% 1.4rem;
+}
+
+.peta_citra h2, .about_citra h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+}
+
+.peta_citra h2 span, .about_citra h2 span{
+    color: #FF9209;
+}
+
+.peta_citra .row .maps {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+    height: 30rem;
+}
+
+/* footer */
+footer {
+    background-color: #D80032;
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .socials_citra {
+    padding: 1rem 0;
+
+}
+
+footer .socials_citra a {
+    color: white;
+    margin: 1rem;
+}
+
+footer .socials_citra a:hover,
+footer .links a:hover{
+    color: var(--primary);
+}
+
+footer .links_citra {
+    margin-bottom: 1.4rem;
+}
+
+footer .links_citra a {
+    color: white;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit_citra {
+    font-size: 0.8rem;
+    color: white;
+}
+
+footer .credit_citra a {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Media Queries */
+
+/* laptop */
+@media (max-width: 1366px){
+    html{
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px){
+    html{
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu_citra {
+        display: inline-block;
+    }
+
+    .navbar_citra .navbar-nav_citra {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #D80032;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar_citra .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+
+    .navbar_citra .navbar-nav_citra.active {
+        right: 0;
+    }
+
+    .navbar_citra .navbar-nav_citra a {
+        color: white;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar_citra .navbar-nav_citra a:hover{
+        color: #3D0C11;
+    }
+
+    .navbar_citra .navbar-nav_citra a::after{
+        transform-origin: 0 0;
+    }
+
+    .navbar_citra .navbar-nav_citra a:hover::after{
+        transform: scaleX(0.2);
+    }
+
+    .about_citra .row_citra {
+        flex-wrap: wrap;
+    }
+
+    .about_citra .row_citra .about-img img{
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about_citra .row_citra .content{
+        padding: 0;
+    }
+
+    .about_citra .row_citra .content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .about_citra .row_citra .content p{
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 450px){
+    html{
+        font-size: 55%;
+    }
+}
